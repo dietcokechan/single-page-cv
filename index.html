@@ -111,7 +111,7 @@
             async function fetchVisitorCount() {
                 console.log("Fetching visitor count..."); // Log when the fetch starts
                 try {
-                    const response = await fetch('https://z5ih4xazeb.execute-api.eu-north-1.amazonaws.com/prod/visitorcounter'); // Fetch the API
+                    const response = await fetch('https://z5ih4xazeb.execute-api.eu-north-1.amazonaws.com/prod/visitorcount'); // Fetch the API
                     const data = await response.json();
                     
                     document.getElementById('visitorCount').textContent = data.visitorCount;
