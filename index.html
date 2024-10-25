@@ -109,7 +109,7 @@
 <script>
     async function fetchVisitorCount() {
         try {
-            const response = await fetch('YOUR_API_URL/visitorcount');
+            const response = await fetch('https://z5ih4xazeb.execute-api.eu-north-1.amazonaws.com/prod/visitorcount');
             const data = await response.json();
             document.getElementById('visitorCount').textContent = data.visitorCount;
         } catch (error) {
