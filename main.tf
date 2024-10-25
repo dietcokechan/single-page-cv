@@ -26,7 +26,7 @@ resource "aws_lambda_function" "visitor_lambda" {
   function_name = "VisitorCounterFunction"
   role          = aws_iam_role.lambda_exec_role.arn
   handler       = "index.handler"
-  runtime       = "nodejs14.x"
+  runtime       = "python3.12"
   environment {
     variables = {
       TABLE_NAME = aws_dynamodb_table.visitor_counter.name
