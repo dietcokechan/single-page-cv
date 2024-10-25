@@ -22,5 +22,5 @@ jobs:
 
       - name: Update Lambda function
         run: |
-          zip function.zip index.js
-          aws lambda update-function-code --function-name updateVisitorCount --zip-file fileb://function.zip
+          zip lambda_function.zip lambda_function.py
+          aws lambda update-function-code --function-name updateVisitorCount --zip-file fileb://lambda_function.zip
