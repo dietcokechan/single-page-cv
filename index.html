@@ -108,20 +108,32 @@
         <h3>Visitor Count: <span id="visitorCount">Loading...</span></h3>
 
         <script>
-            async function fetchVisitorCount() {
-                console.log("Fetching visitor count..."); // Log when the fetch starts
-                try {
-                    const response = await fetch('https://z5ih4xazeb.execute-api.eu-north-1.amazonaws.com/prod/visitorcount'); // Fetch the API
-                    const data = await response.json();
-                    
-                    document.getElementById('visitorCount').textContent = data.visitorCount;
-                } catch (error) {
-                    console.error('Error fetching visitor count:', error);
-                }
+    async function fetchVisitorCount() {
+        console.log("Starting fetch for visitor count...");
+        try {
+            const response = await fetch('YOUR_API_URL/visitorcount'); // Replace with your actual API URL
+            console.log("Response status:", response.status);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        
-            // Fetch visitor count when the page loads
-            window.onload = fetchVisitorCount; // Ensure it runs after the page loads
+
+            const data = await response.json();
+            console.log("Received API response:", data);
+
+            if (data && typeof data.visitorCount === "number") {
+                document.getElementById('visitorCount').textContent = data.visitorCount;
+                console.log("Visitor count updated to:", data.visitorCount);
+            } else {
+                console.warn("Unexpected data format:", data);
+            }
+        } catch (error) {
+            console.error('Error fetching visitor count:', error);
+        }
+    }
+
+    // Run fetchVisitorCount when the page loads
+    window.onload = fetchVisitorCount;
         </script>
 </body>
 </html>
