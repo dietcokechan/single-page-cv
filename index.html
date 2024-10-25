@@ -110,7 +110,7 @@
             async function fetchVisitorCount() {
                 console.log("Fetching visitor count..."); // Log when the fetch starts
                 try {
-                    const response = await fetch('YOUR_API_URL/visitorcount');
+                    const response = await fetch('https://z5ih4xazeb.execute-api.eu-north-1.amazonaws.com/prod/visitorcounter'); // Fetch the API
                     const data = await response.json();
                     console.log("Response data:", data); // Log the API response
                     
@@ -127,7 +127,7 @@
             // Fetch visitor count when the page loads
             window.onload = fetchVisitorCount; // Ensure it runs after the page loads
         </script>
-        
+
     </footer>
 </body>
 </html>
