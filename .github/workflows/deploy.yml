@@ -19,3 +19,8 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync ./ s3://singlepagecvbucket --delete
+
+      - name: Update Lambda function
+        run: |
+          zip function.zip index.js
+          aws lambda update-function-code --function-name updateVisitorCount --zip-file fileb://function.zip
