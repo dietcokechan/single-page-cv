@@ -1,0 +1,39 @@
+# Node modules (if you use npm for JavaScript/TypeScript)
+node_modules/
+*.log
+
+# Python dependencies for Lambda (if packaging locally)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.whl
+dist/
+build/
+env/
+venv/
+.venv/
+
+# AWS Lambda artifacts
+*.zip
+
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# AWS SAM or Serverless Framework build artifacts
+.aws-sam/
+.serverless/
+
+# Environment variable files (if you use any locally)
+.env
+.env.*
+
+# VSCode or other editor configuration
+.vscode/
+.idea/
+
+# macOS or Linux generated files
+.DS_Store
